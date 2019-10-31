@@ -6,7 +6,17 @@ class Number {
     }
     console.log(result);
   }
-}   
+  timsole(n) {
+    for (let i = 0; i < n; i++) {
+      if (n[i] % 2 == 0) {
+        console.log();
+      }
+    }
+  }
 
+
+
+
+}
 
 module.exports = Number;

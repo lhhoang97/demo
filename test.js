@@ -6,7 +6,8 @@ class Number {
     }
     console.log(result);
   }
-  tinh(){
+  tinh() {
+
 
 
     

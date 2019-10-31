@@ -6,6 +6,7 @@ class Number {
     }
     console.log(result);
   }
+
 }
 
 module.exports = Number;

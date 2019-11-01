@@ -6,12 +6,6 @@ class Number {
     }
     console.log(result);
   }
-  tinh() {
-
-
-
-    
-  }
 }
 
 module.exports = Number;

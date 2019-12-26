@@ -79,14 +79,33 @@ class student {
     this.age = age;
     this.sdt = sdt;
   }
-  checkNullName(name) {
-    if (name === "") {
-      return false;
-    } else {
+  checkNullName() {
+    if (this.name === "") {
       return true;
+    } else {
+      return false;
+    }
+  }
+  checkName() {
+    if (this.name === "" && name.length == 20) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  checkSodt() {
+    if (this.sdt[0] === "0" && this.sdt.length == 10) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
-var person = new student("", 22, "098234568");
+var person = new student("asasa", 22, "0982534568");
 person.checkNullName();
 console.log(person);
+// var ten = new student("ajajskaj", 22, "029210931");
+
+// console.log(ten.checkName());
+var sdt1 = new student("", 22, "0982345658");
+console.log(sdt1.checkSodt());

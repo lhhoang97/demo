@@ -1,16 +1,22 @@
 class ktHam {
-  constructor(name, sdt) {
+  constructor(name, sdt, number) {
     this.name = name;
     this.sdt = sdt;
+    this.number = number;
   }
-  checkNull(name) {
-    return name === "";
+  checkNull() {
+    if (this.name === "" || this.name.length > 20) {
+      return false;
+    }
+    return true;
   }
 
-  checkAbc() {}
-
-  checkSdt(sdt) {
-    if (sdt[0] === "0" && sdt.length == 10) {
+  checkSdt() {
+    if (
+      this.sdt[0] === "0" &&
+      this.sdt.length == 10 &&
+      this.sdt !== /a-zA-Z/m
+    ) {
       return true;
     } else {
       return false;
@@ -28,8 +34,8 @@ class ktHam {
     return arr;
   }
 
-  checkNumber(number) {
-    if (typeof number === "number") {
+  checkNumber() {
+    if (typeof this.number === "number") {
       return true;
     } else {
       return false;
@@ -67,7 +73,7 @@ class ktHam {
   }
 }
 // var person = new ktHam();
-// console.log(person.checkNull(""));
+// console.log(person.checkNull("aa"));
 
 // var person = new ktHam();
 // console.log(person.checkOut("b"));
@@ -84,52 +90,30 @@ class ktHam {
 // var person6 = new ktHam();
 // console.log(person6.Dem("dao van cuong"));
 
-// class student {
-//   constructor(name, age, sdt) {
-//     this.name = name;
-//     this.age = age;
-//     this.sdt = sdt;
-//   }
-//   // checkNameNull = () => {
-//   //   this.name = name;
-//   //   if (checkNameNull(name)) {
-//   //     return true;
-//   //   } else {
-//   //     return false;
-//   //   }
-//   // };
-//   checkName() {
-//     if (this.name === "" && this.name.length == 20) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-//   checkSodt() {
-//     if (this.sdt[0] === "0" && this.sdt.length == 10) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-// }
-// // var person = new student("asasa", 22, "0982534568");
-// // person.checkNullName();
-// // console.log(person);
-// var ten = new student("aksjaksjaksaks", 22, "029210931");
-
-// console.log(ten.checkName());
-// var sdt1 = new student("", 22, "1982345658");
-// console.log(sdt1.checkSodt());
-
 class student extends ktHam {
-  constructor(name, age, sdt) {
-    super(name, sdt);
+  constructor(name, age, sdt, number) {
+    super(name, sdt, number);
     this.age = age;
   }
-  checkNull() {
-    return this.name;
+  checkName() {
+    return this.checkNull();
+  }
+  checkSdt1() {
+    return this.checkSdt();
+  }
+  checkNumber1() {
+    return this.checkNumber();
+  }
+  checkAge() {
+    if (typeof this.age === "number") {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
-var per = new student("kakaka", 22, "0981345678");
-console.log(per.checkNull());
+var hoang = new student("hoang", 22, "0x82348468");
+console.log(hoang.checkName());
+console.log(hoang.checkSdt1());
+console.log(hoang.checkNumber1());
+console.log(hoang.checkAge());

@@ -12,14 +12,16 @@ class ktHam {
   }
 
   checkSdt() {
-    if (
-      this.sdt[0] === "0" &&
-      this.sdt.length == 10 &&
-      this.sdt !== /a-zA-Z/m
-    ) {
-      return true;
-    } else {
-      return false;
+    for (let i = 0; i < this.sdt.length; i++) {
+      if (
+        this.sdt[0] === "0" &&
+        this.sdt.length == 10 &&
+        this.sdt[1 - 9] === /[0 - 9]/
+      ) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 
@@ -112,7 +114,7 @@ class student extends ktHam {
     }
   }
 }
-var hoang = new student("hoang", 22, "0x82348468");
+var hoang = new student("hoang", 22, "0982348468");
 console.log(hoang.checkName());
 console.log(hoang.checkSdt1());
 console.log(hoang.checkNumber1());
